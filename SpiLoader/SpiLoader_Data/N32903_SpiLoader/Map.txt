@@ -1,0 +1,1106 @@
+
+================================================================================
+
+Section Cross References
+
+    wb_init.o(WB_INIT) refers to __main.o(!!!) for __main
+    standalone.o(.text) refers to vectors.o(Vect) for Vector_Table
+    standalone.o(.text) refers to heap.o(Heap) for bottom_of_heap
+    standalone.o(.text) refers to stack.o(Stacks) for top_of_stacks
+    vectors.o(Vect) refers to wb_init.o(WB_INIT) for Reset_Go
+    main.o(.text) refers to libgpio.o(.text) for gpio_setportpull
+    main.o(.text) refers to wb_cache.o(.text) for sysEnableCache
+    main.o(.text) refers to wb_config.o(.text) for sysGetExternalClock
+    main.o(.text) refers to wb_uart.o(.text) for sysUartPort
+    main.o(.text) refers to wb_aic.o(.text) for sysSetLocalInterrupt
+    main.o(.text) refers to main.o(.data) for gWdiFlag
+    main.o(.text) refers to SpiRead.o(.text) for SPI_OpenSPI
+    main.o(.text) refers to rt_memclr.o(.text) for __rt_memclr
+    main.o(.text) refers to main.o(.bss) for .bss$2
+    main.o(.text) refers (Special) to __main.o(!!!) for __main
+    main.o(.text) refers (Special) to _no_redirect.o(.text) for _main
+    main.o(.data) refers (Special) to __main.o(!!!) for __main
+    main.o(.data) refers (Special) to _no_redirect.o(.text) for _main
+    main.o(.bss) refers (Special) to __main.o(!!!) for __main
+    main.o(.bss) refers (Special) to _no_redirect.o(.text) for _main
+    SpiRead.o(.text) refers to wb_uart.o(.text) for sysprintf
+    SpiRead.o(.text) refers to main.o(.text) for FeedWatchdog
+    wb_mmu.o(.text) refers to wb_cache.o(.text) for sysGetCacheState
+    wb_mmu.o(.text) refers to wb_sysctl.o(SYS_INIT) for sysSetupCP15
+    wb_mmu.o(.text) refers to wb_mmu.o(.bss) for .bss$2
+    wb_power.o(.text) refers to rt_memcpy.o(.text) for __rt_memcpy
+    wb_power.o(.text) refers to wb_config.o(.text) for sysGetSystemClock
+    wb_power.o(.text) refers to wb_aic.o(.text) for sysGetIBitState
+    wb_power.o(.text) refers to memcmp.o(.text) for memcmp
+    wb_power.o(.text) refers to wb_cache.o(.text) for sysFlushCache
+    wb_power.o(.text) refers to wb_power.o(.bss) for .bss$2
+    wb_timer.o(.text) refers to wb_aic.o(.text) for sysInstallISR
+    wb_timer.o(.text) refers to rt_udiv.o(.text) for __rt_udiv
+    wb_timer.o(.text) refers to wb_timer.o(.bss) for .bss$2
+    wb_timer.o(.text) refers to wb_timer.o(.data) for _sys_uTimer0ClockRate
+    wb_uart.o(.text) refers to rt_udiv.o(.text) for __rt_udiv
+    wb_uart.o(.text) refers to wb_aic.o(.text) for sysInstallISR
+    wb_uart.o(.text) refers to strlen.o(.text) for strlen
+    wb_uart.o(.text) refers to wb_uart.o(.data) for u32UartPort
+    wb_uart.o(.text) refers to wb_uart.o(.bss) for .bss$2
+    wb_uart.o(.text) refers to wb_config.o(.text) for sysGetExternalClock
+    wb_aic.o(.text) refers to wb_cache.o(.text) for sysGetCacheState
+    wb_aic.o(.text) refers to wb_aic.o(.data) for _sys_bIsHWMode
+    wb_aic.o(.text) refers to wb_aic.o(.bss) for .bss$2
+    wb_aic.o(.data) refers to wb_aic.o(.text) for WB_Interrupt_Shell
+    wb_cache.o(.text) refers to wb_mmu.o(.text) for sysInitMMUTable
+    wb_cache.o(.text) refers to wb_dcache.o(MEM_INIT) for sys_flush_and_clean_dcache
+    wb_cache.o(.text) refers to wb_cache.o(.bss) for .bss$2
+    wb_config.o(.text) refers to rt_memcpy.o(.text) for __rt_memcpy
+    wb_config.o(.text) refers to rt_udiv.o(.text) for __rt_udiv
+    wb_config.o(.text) refers to wb_power.o(.bss) for _tmp_buf
+    wb_config.o(.text) refers to wb_config.o(.constdata) for .constdata$1
+    wb_config.o(.text) refers to wb_config.o(.data) for bIsCheckConstraint
+    wb_config.o(.text) refers to wb_config.o(.bss) for .bss$2
+    wb_config.o(.text) refers to rt_sdiv.o(.text) for __rt_sdiv
+    wb_mem.o(.text) refers to malloc.o(.text) for malloc
+    wb_mem.o(.text) refers to free.o(.text) for free
+    libgpio.o(.text) refers to libgpio.o(.constdata) for .constdata$1
+    __main.o(!!!) refers to kernel.o(.text) for __rt_entry
+    free.o(.text) refers to libspace.o(.text) for __user_libspace
+    free.o(.text) refers to h1_free.o(.text) for __Heap_Free
+    free.o(.text) refers (Special) to hguardc.o(.text) for __heap_guard
+    malloc.o(.text) refers to heapext.o(.text) for __heap_extend
+    malloc.o(.text) refers to h1_extend.o(.text) for __Heap_ProvideMemory
+    malloc.o(.text) refers to rt_raise.o(.text) for __rt_raise
+    malloc.o(.text) refers to h1_alloc.o(.text) for __Heap_DescSize
+    malloc.o(.text) refers to libspace.o(.text) for __user_libspace
+    malloc.o(.text) refers (Special) to hguardc.o(.text) for __heap_guard
+    rt_memclr.o(.text) refers to rt_memclr_w.o(.text) for _memset_w
+    rt_memcpy.o(.text) refers to rt_memcpy_w.o(.text) for _memcpy_lastbytes
+    rt_sdiv.o(.text) refers to rt_div0.o(.text) for __rt_div0
+    rt_udiv.o(.text) refers to rt_div0.o(.text) for __rt_div0
+    h1_alloc.o(.text) refers to malloc.o(.text) for __Heap_Full
+    h1_extend.o(.text) refers to h1_free.o(.text) for __Heap_Free
+    heapext.o(.text) refers to stkheap1.o(.text) for __rt_heap_extend
+    kernel.o(.text) refers to stkheap1.o(.text) for __rt_stackheap_init
+    kernel.o(.text) refers to lib_init.o(.text) for __rt_lib_init
+    kernel.o(.text) refers to main.o(.text) for main
+    kernel.o(.text) refers to exit.o(.text) for exit
+    kernel.o(.text) refers to standalone.o(.text) for _sys_exit
+    libspace.o(.text) refers to libspace.o(.bss) for __libspace_start
+    rt_div0.o(.text) refers to rt_raise.o(.text) for __rt_raise
+    rt_raise.o(.text) refers to __raise.o(.text) for __raise
+    rt_raise.o(.text) refers to standalone.o(.text) for _sys_exit
+    __raise.o(.text) refers to defsig.o(.text) for __default_signal_handler
+    exit.o(.text) refers to kernel.o(.text) for __rt_exit
+    lib_init.o(.text) refers to fpinit.o(x$fpl$fpinit) for _fp_init
+    lib_init.o(.text) refers (Weak) to h1_alloc.o(.text) for __Heap_DescSize
+    lib_init.o(.text) refers (Weak) to malloc.o(.text) for _init_alloc
+    lib_init.o(.text) refers (Weak) to malloc.o(.text) for _init_user_alloc
+    lib_init.o(.text) refers to libspace.o(.text) for __user_libspace
+    lib_init.o(.text) refers (Weak) to malloc.o(.text) for _terminate_user_alloc
+    stkheap1.o(.text) refers to libspace.o(.text) for __user_libspace
+    stkheap1.o(.text) refers to standalone.o(.text) for __user_initial_stackheap
+    defsig.o(.text) refers to standalone.o(.text) for _ttywrch
+    defsig.o(.text) refers to defsig.o(.constdata) for .constdata$1
+    fpinit.o(x$fpl$fpinit) refers to rt_fp_status_addr.o(.text) for __rt_fp_status_addr
+    rt_fp_status_addr.o(.text) refers to libspace.o(.text) for __user_libspace
+
+
+================================================================================
+
+Image Symbol Table
+
+    Mapping Symbols
+
+    Sym    Value        Execution Region
+
+    $a     0x00000000   RAM
+    $d     0x00000020   RAM
+    $f     0x00000020   RAM
+    $f     0x00000024   RAM
+    $f     0x00000028   RAM
+    $f     0x0000002c   RAM
+    $f     0x00000030   RAM
+    $f     0x00000038   RAM
+    $f     0x0000003c   RAM
+    $a     0x00000040   RAM
+    $a     0x00700000   ROM
+    $d     0x00700040   ROM
+    $a     0x00700054   ROM
+    $d     0x007000ec   ROM
+    $a     0x007000fc   ROM
+    $d     0x0070016c   ROM
+    $a     0x00700174   ROM
+    $d     0x00700374   ROM
+    $a     0x007003b0   ROM
+    $p     0x00700550   ROM
+    $d     0x00700578   ROM
+    $a     0x007005bc   ROM
+    $d     0x00700818   ROM
+    $a     0x0070084c   ROM
+    $d     0x00700e74   ROM
+    $a     0x00700e8c   ROM
+    $d     0x007017a8   ROM
+    $f     0x007017c4   ROM
+    $a     0x007017d4   ROM
+    $d     0x007019e4   ROM
+    $a     0x007019e8   ROM
+    $p     0x00701a30   ROM
+    $p     0x00701a84   ROM
+    $p     0x00701adc   ROM
+    $p     0x00701b30   ROM
+    $d     0x00701fa8   ROM
+    $f     0x00701fb8   ROM
+    $f     0x00701fbc   ROM
+    $a     0x00701fc4   ROM
+    $d     0x00702278   ROM
+    $a     0x00702284   ROM
+    $p     0x00702418   ROM
+    $p     0x007029fc   ROM
+    $d     0x00702a6c   ROM
+    $f     0x00702a8c   ROM
+    $f     0x00702aa4   ROM
+    $a     0x00702ab4   ROM
+    $p     0x00703298   ROM
+    $d     0x007032b4   ROM
+    $f     0x007032f0   ROM
+    $a     0x007032f4   ROM
+    $d     0x00703b50   ROM
+    $a     0x00703b60   ROM
+    $d     0x00704310   ROM
+    $a     0x00704314   ROM
+    $d     0x00704344   ROM
+    $a     0x00704348   ROM
+    $p     0x00704480   ROM
+    $d     0x0070448c   ROM
+    $a     0x00704494   ROM
+    $d     0x007045a4   ROM
+    $a     0x007045a8   ROM
+    $d     0x00704788   ROM
+    $a     0x00704804   ROM
+    $d     0x00704858   ROM
+    $f     0x00704a40   ROM
+    $f     0x00704a44   ROM
+    $f     0x00704a48   ROM
+    $f     0x00704a4c   ROM
+    $f     0x00704a50   ROM
+    $f     0x00704a54   ROM
+    $f     0x00704a58   ROM
+    $f     0x00704a5c   ROM
+    $f     0x00704a60   ROM
+    $f     0x00704a64   ROM
+    $f     0x00704a68   ROM
+    $f     0x00704a6c   ROM
+    $f     0x00704a70   ROM
+    $f     0x00704a74   ROM
+    $f     0x00704a78   ROM
+    $f     0x00704a7c   ROM
+    $f     0x00704a80   ROM
+    $f     0x00704a84   ROM
+    $f     0x00704a88   ROM
+    $f     0x00704a8c   ROM
+    $f     0x00704a90   ROM
+    $f     0x00704a94   ROM
+    $f     0x00704a98   ROM
+    $f     0x00704a9c   ROM
+    $f     0x00704aa0   ROM
+    $f     0x00704aa4   ROM
+    $f     0x00704aa8   ROM
+    $f     0x00704aac   ROM
+    $f     0x00704ab0   ROM
+    $f     0x00704ab4   ROM
+    $f     0x00704ab8   ROM
+    $f     0x00704ac0   ROM
+    $f     0x00704ac4   ROM
+    $f     0x00704ac8   ROM
+    $f     0x00704acc   ROM
+    $f     0x00704ad0   ROM
+    $f     0x00704ad4   ROM
+    $f     0x00704ad8   ROM
+    $f     0x00704adc   ROM
+    $f     0x00704ae0   ROM
+    $f     0x00704ae4   ROM
+    $f     0x00704ae8   ROM
+    $f     0x00704aec   ROM
+    $f     0x00704af0   ROM
+    $f     0x00704af4   ROM
+    $f     0x00704af8   ROM
+    $f     0x00704afc   ROM
+    $f     0x00704b00   ROM
+    $f     0x00704b04   ROM
+    $f     0x00704b08   ROM
+    $f     0x00704b0c   ROM
+    $f     0x00704b10   ROM
+    $f     0x00704b14   ROM
+    $f     0x00704b18   ROM
+    $f     0x00704b1c   ROM
+    $f     0x00704b20   ROM
+    $f     0x00704b24   ROM
+    $f     0x00704b28   ROM
+    $f     0x00704b2c   ROM
+    $f     0x00704b30   ROM
+    $f     0x00704b34   ROM
+    $f     0x00704b38   ROM
+    $d     0x00704b3c   ROM
+    $d     0x00780000   HEAP
+    $d     0x00790000   STACK
+
+    Local Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    D:\Work\Wellcom_WEL-401AFE-V40\SpiLoader\src\wb_init.s 0x00000000   Number         0  wb_init.o ABSOLUTE
+    <Anonymous Symbol>                       0x00000000   Data         120  wb_init.o(.debug_line)
+    <Anonymous Symbol>                       0x00000000   Data         132  wb_init.o(.debug_info)
+    <Anonymous Symbol>                       0x00000000   Data          16  wb_init.o(.debug_abbrev)
+    WB_INIT                                  0x00700000   ARM Code      84  wb_init.o(WB_INIT)
+    USR_MODE                                 0x00000010   Number         0  wb_init.o ABSOLUTE
+    FIQ_MODE                                 0x00000011   Number         0  wb_init.o ABSOLUTE
+    IRQ_MODE                                 0x00000012   Number         0  wb_init.o ABSOLUTE
+    SVC_MODE                                 0x00000013   Number         0  wb_init.o ABSOLUTE
+    ABT_MODE                                 0x00000017   Number         0  wb_init.o ABSOLUTE
+    UDF_MODE                                 0x0000001b   Number         0  wb_init.o ABSOLUTE
+    SYS_MODE                                 0x0000001f   Number         0  wb_init.o ABSOLUTE
+    F_BIT                                    0x00000040   Number         0  wb_init.o ABSOLUTE
+    I_BIT                                    0x00000080   Number         0  wb_init.o ABSOLUTE
+    UND_Stack                                0x007fe800   Number         0  wb_init.o ABSOLUTE
+    Abort_Stack                              0x007fec00   Number         0  wb_init.o ABSOLUTE
+    IRQ_Stack                                0x007ff000   Number         0  wb_init.o ABSOLUTE
+    FIQ_Stack                                0x007ff400   Number         0  wb_init.o ABSOLUTE
+    SVC_Stack                                0x007ffc00   Number         0  wb_init.o ABSOLUTE
+    RAM_Limit                                0x00800000   Number         0  wb_init.o ABSOLUTE
+    USR_Stack                                0x00800000   Number         0  wb_init.o ABSOLUTE
+    D:\Work\Wellcom_WEL-401AFE-V40\SpiLoader\src\heap.s 0x00000000   Number         0  heap.o ABSOLUTE
+    Heap                                     0x00780000   Data           4  heap.o(Heap)
+    D:\Work\Wellcom_WEL-401AFE-V40\SpiLoader\src\stack.s 0x00000000   Number         0  stack.o ABSOLUTE
+    Stacks                                   0x00790000   Data           4  stack.o(Stacks)
+    D:\Work\Wellcom_WEL-401AFE-V40\SpiLoader\src\standalone.c 0x00000000   Number         0  standalone.o ABSOLUTE
+    .text                                    0x007000fc   ARM Code       0  standalone.o(.text)
+    C$debug_frame13                          0x00000000   Data           0  standalone.o(.debug_frame)
+    C$debug_loc12                            0x00000000   Data           0  standalone.o(.debug_loc)
+    C$debug_macinfo5                         0x00000000   Data           0  standalone.o(.debug_macinfo)
+    C$debug_pubnames4                        0x00000000   Data           0  standalone.o(.debug_pubnames)
+    C$debug_abbrev0                          0x00000010   Data           0  standalone.o(.debug_abbrev)
+    C$debug_pubnames10                       0x00000034   Data           0  standalone.o(.debug_pubnames)
+    C$debug_line2                            0x00000078   Data           0  standalone.o(.debug_line)
+    C$debug_info3                            0x00000084   Data           0  standalone.o(.debug_info)
+    C$debug_line8                            0x000000d8   Data           0  standalone.o(.debug_line)
+    C$debug_info9                            0x00000174   Data           0  standalone.o(.debug_info)
+    D:\Work\Wellcom_WEL-401AFE-V40\SpiLoader\src\vectors.s 0x00000000   Number         0  vectors.o ABSOLUTE
+    <Anonymous Symbol>                       0x00000350   Data         132  vectors.o(.debug_info)
+    <Anonymous Symbol>                       0x00000164   Data         128  vectors.o(.debug_line)
+    <Anonymous Symbol>                       0x000003fc   Data          16  vectors.o(.debug_abbrev)
+    Vect                                     0x00000000   ARM Code      96  vectors.o(Vect)
+    Reset_Addr                               0x00000020   Data           4  vectors.o(Vect)
+    Undefined_Addr                           0x00000024   Data           4  vectors.o(Vect)
+    SWI_Addr                                 0x00000028   Data           4  vectors.o(Vect)
+    Prefetch_Addr                            0x0000002c   Data           4  vectors.o(Vect)
+    Abort_Addr                               0x00000030   Data           4  vectors.o(Vect)
+    IRQ_Addr                                 0x00000038   Data           4  vectors.o(Vect)
+    FIQ_Addr                                 0x0000003c   Data           4  vectors.o(Vect)
+    Undefined_Handler                        0x00000040   ARM Code       0  vectors.o(Vect)
+    SWI_Handler                              0x00000044   ARM Code       0  vectors.o(Vect)
+    Prefetch_Handler                         0x0000004c   ARM Code       0  vectors.o(Vect)
+    Abort_Handler                            0x00000050   ARM Code       0  vectors.o(Vect)
+    IRQ_Handler                              0x00000058   ARM Code       0  vectors.o(Vect)
+    FIQ_Handler                              0x0000005c   ARM Code       0  vectors.o(Vect)
+    D:\Work\Wellcom_WEL-401AFE-V40\SpiLoader\src\main.c 0x00000000   Number         0  main.o ABSOLUTE
+    .bss                                     0x00704b58   Data           0  main.o(.bss)
+    .data                                    0x00704a28   Data           0  main.o(.data)
+    .text                                    0x00700174   ARM Code       0  main.o(.text)
+    C$debug_abbrev0                          0x00000010   Data           0  standalone.o(.debug_abbrev)
+    C$debug_pubnames4                        0x00000090   Data           0  main.o(.debug_pubnames)
+    C$debug_frame97                          0x0000009c   Data           0  main.o(.debug_frame)
+    C$debug_pubnames94                       0x000000dc   Data           0  main.o(.debug_pubnames)
+    C$debug_pubnames10                       0x0000012c   Data           0  main.o(.debug_pubnames)
+    C$debug_loc96                            0x00000134   Data           0  main.o(.debug_loc)
+    C$debug_pubnames46                       0x000001b0   Data           0  main.o(.debug_pubnames)
+    C$debug_macinfo5                         0x000001cc   Data           0  main.o(.debug_macinfo)
+    C$debug_line2                            0x000001e4   Data           0  main.o(.debug_line)
+    C$debug_line92                           0x00000310   Data           0  main.o(.debug_line)
+    C$debug_pubnames28                       0x0000035c   Data           0  main.o(.debug_pubnames)
+    C$debug_info45                           0x000003d4   Data           0  main.o(.debug_info)
+    C$debug_macinfo11                        0x00000468   Data           0  main.o(.debug_macinfo)
+    C$debug_line8                            0x00000474   Data           0  main.o(.debug_line)
+    C$debug_line44                           0x000004c4   Data           0  main.o(.debug_line)
+    C$debug_line26                           0x0000051c   Data           0  main.o(.debug_line)
+    C$debug_macinfo47                        0x00000658   Data           0  main.o(.debug_macinfo)
+    C$debug_macinfo29                        0x00000688   Data           0  main.o(.debug_macinfo)
+    C$debug_info3                            0x000006a0   Data           0  main.o(.debug_info)
+    C$debug_info27                           0x000007ac   Data           0  main.o(.debug_info)
+    C$debug_info93                           0x00000bb0   Data           0  main.o(.debug_info)
+    C$debug_info9                            0x0000112c   Data           0  main.o(.debug_info)
+    .data$0                                  0x00704a28   Data           0  main.o(.data)
+    .bss$2                                   0x00704b58   Data           0  main.o(.bss)
+    D:\Work\Wellcom_WEL-401AFE-V40\SpiLoader\src\SpiRead.c 0x00000000   Number         0  SpiRead.o ABSOLUTE
+    .text                                    0x007005bc   ARM Code       0  SpiRead.o(.text)
+    C$debug_abbrev0                          0x00000010   Data           0  standalone.o(.debug_abbrev)
+    C$debug_frame43                          0x0000016c   Data           0  SpiRead.o(.debug_frame)
+    C$debug_pubnames34                       0x000001b0   Data           0  main.o(.debug_pubnames)
+    C$debug_pubnames16                       0x0000035c   Data           0  main.o(.debug_pubnames)
+    C$debug_info33                           0x000003d4   Data           0  main.o(.debug_info)
+    C$debug_loc42                            0x00000414   Data           0  SpiRead.o(.debug_loc)
+    C$debug_line32                           0x000004c4   Data           0  main.o(.debug_line)
+    C$debug_line14                           0x0000051c   Data           0  main.o(.debug_line)
+    C$debug_line2                            0x00000590   Data           0  SpiRead.o(.debug_line)
+    C$debug_pubnames40                       0x0000062c   Data           0  SpiRead.o(.debug_pubnames)
+    C$debug_line38                           0x00000638   Data           0  SpiRead.o(.debug_line)
+    C$debug_macinfo35                        0x00000658   Data           0  main.o(.debug_macinfo)
+    C$debug_macinfo17                        0x00000688   Data           0  main.o(.debug_macinfo)
+    C$debug_info15                           0x000007ac   Data           0  main.o(.debug_info)
+    C$debug_macinfo5                         0x00000e50   Data           0  SpiRead.o(.debug_macinfo)
+    C$debug_info3                            0x00001234   Data           0  SpiRead.o(.debug_info)
+    C$debug_info39                           0x000012ac   Data           0  SpiRead.o(.debug_info)
+    D:\Work\Wellcom_WEL-401AFE-V40\SpiLoader\sys\wb_mmu.c 0x00000000   Number         0  wb_mmu.o ABSOLUTE
+    .bss                                     0x00708000   Data           0  wb_mmu.o(.bss)
+    .text                                    0x007008f0   ARM Code       0  wb_mmu.o(.text)
+    C$debug_abbrev0                          0x00000010   Data           0  standalone.o(.debug_abbrev)
+    C$debug_pubnames28                       0x000001b0   Data           0  main.o(.debug_pubnames)
+    C$debug_frame37                          0x00000224   Data           0  wb_mmu.o(.debug_frame)
+    C$debug_pubnames10                       0x0000035c   Data           0  main.o(.debug_pubnames)
+    C$debug_info27                           0x000003d4   Data           0  main.o(.debug_info)
+    C$debug_line26                           0x000004c4   Data           0  main.o(.debug_line)
+    C$debug_line8                            0x0000051c   Data           0  main.o(.debug_line)
+    C$debug_macinfo29                        0x00000658   Data           0  main.o(.debug_macinfo)
+    C$debug_macinfo11                        0x00000688   Data           0  main.o(.debug_macinfo)
+    C$debug_pubnames4                        0x0000069c   Data           0  wb_mmu.o(.debug_pubnames)
+    C$debug_loc36                            0x000006a8   Data           0  wb_mmu.o(.debug_loc)
+    C$debug_pubnames34                       0x00000744   Data           0  wb_mmu.o(.debug_pubnames)
+    C$debug_line2                            0x00000778   Data           0  wb_mmu.o(.debug_line)
+    C$debug_info9                            0x000007ac   Data           0  main.o(.debug_info)
+    C$debug_line32                           0x00000810   Data           0  wb_mmu.o(.debug_line)
+    C$debug_macinfo5                         0x00001050   Data           0  wb_mmu.o(.debug_macinfo)
+    C$debug_info3                            0x000016f0   Data           0  wb_mmu.o(.debug_info)
+    C$debug_info33                           0x00001864   Data           0  wb_mmu.o(.debug_info)
+    .bss$2                                   0x00708000   Data           0  wb_mmu.o(.bss)
+    _IsInitMMUTable                          0x00708000   Data           1  wb_mmu.o(.bss)
+    _MMUMappingMode                          0x00708004   Data           4  wb_mmu.o(.bss)
+    _mmuCoarsePageTable                      0x00710000   Data       65536  wb_mmu.o(.bss)
+    _mmuCoarsePageTable_NonCache             0x00720000   Data       65536  wb_mmu.o(.bss)
+    D:\Work\Wellcom_WEL-401AFE-V40\SpiLoader\sys\wb_power.c 0x00000000   Number         0  wb_power.o ABSOLUTE
+    .bss                                     0x00730000   Data           0  wb_power.o(.bss)
+    C$debug_abbrev0                          0x00000010   Data           0  standalone.o(.debug_abbrev)
+    C$debug_pubnames34                       0x000001b0   Data           0  main.o(.debug_pubnames)
+    C$debug_pubnames16                       0x0000035c   Data           0  main.o(.debug_pubnames)
+    C$debug_info33                           0x000003d4   Data           0  main.o(.debug_info)
+    C$debug_line32                           0x000004c4   Data           0  main.o(.debug_line)
+    C$debug_line14                           0x0000051c   Data           0  main.o(.debug_line)
+    C$debug_macinfo35                        0x00000658   Data           0  main.o(.debug_macinfo)
+    C$debug_macinfo17                        0x00000688   Data           0  main.o(.debug_macinfo)
+    C$debug_info15                           0x000007ac   Data           0  main.o(.debug_info)
+    C$debug_pubnames4                        0x000007c8   Data           0  wb_power.o(.debug_pubnames)
+    C$debug_line2                            0x000009f4   Data           0  wb_power.o(.debug_line)
+    C$debug_macinfo5                         0x00001234   Data           0  wb_power.o(.debug_macinfo)
+    C$debug_info3                            0x00001f9c   Data           0  wb_power.o(.debug_info)
+    .bss$2                                   0x00730000   Data           0  wb_power.o(.bss)
+    _sys_PM_IRQ                              0x00730000   Data           4  wb_power.o(.bss)
+    D:\Work\Wellcom_WEL-401AFE-V40\SpiLoader\sys\wb_sysctl.s 0x00000000   Number         0  wb_sysctl.o ABSOLUTE
+    <Anonymous Symbol>                       0x00002054   Data         132  wb_sysctl.o(.debug_info)
+    <Anonymous Symbol>                       0x0000040c   Data          16  wb_sysctl.o(.debug_abbrev)
+    SYS_INIT                                 0x00704820   ARM Code      36  wb_sysctl.o(SYS_INIT)
+    <Anonymous Symbol>                       0x00000ac0   Data         112  wb_sysctl.o(.debug_line)
+    D:\Work\Wellcom_WEL-401AFE-V40\SpiLoader\sys\wb_timer.c 0x00000000   Number         0  wb_timer.o ABSOLUTE
+    C$debug_abbrev0                          0x00000010   Data           0  standalone.o(.debug_abbrev)
+    C$debug_pubnames10                       0x0000012c   Data           0  main.o(.debug_pubnames)
+    C$debug_pubnames34                       0x000001b0   Data           0  main.o(.debug_pubnames)
+    C$debug_pubnames16                       0x0000035c   Data           0  main.o(.debug_pubnames)
+    C$debug_info33                           0x000003d4   Data           0  main.o(.debug_info)
+    C$debug_macinfo11                        0x00000468   Data           0  main.o(.debug_macinfo)
+    C$debug_line8                            0x00000474   Data           0  main.o(.debug_line)
+    C$debug_line32                           0x000004c4   Data           0  main.o(.debug_line)
+    C$debug_line14                           0x0000051c   Data           0  main.o(.debug_line)
+    C$debug_macinfo35                        0x00000658   Data           0  main.o(.debug_macinfo)
+    C$debug_macinfo17                        0x00000688   Data           0  main.o(.debug_macinfo)
+    C$debug_info15                           0x000007ac   Data           0  main.o(.debug_info)
+    C$debug_info9                            0x0000112c   Data           0  main.o(.debug_info)
+    D:\Work\Wellcom_WEL-401AFE-V40\SpiLoader\sys\wb_uart.c 0x00000000   Number         0  wb_uart.o ABSOLUTE
+    .text                                    0x00700e8c   ARM Code       0  wb_uart.o(.text)
+    .data                                    0x00704a2c   Data           0  wb_uart.o(.data)
+    .bss                                     0x00731004   Data           0  wb_uart.o(.bss)
+    C$debug_abbrev0                          0x00000010   Data           0  standalone.o(.debug_abbrev)
+    C$debug_pubnames16                       0x0000012c   Data           0  main.o(.debug_pubnames)
+    C$debug_pubnames40                       0x000001b0   Data           0  main.o(.debug_pubnames)
+    C$debug_frame49                          0x00000338   Data           0  wb_uart.o(.debug_frame)
+    C$debug_pubnames22                       0x0000035c   Data           0  main.o(.debug_pubnames)
+    C$debug_info39                           0x000003d4   Data           0  main.o(.debug_info)
+    C$debug_macinfo17                        0x00000468   Data           0  main.o(.debug_macinfo)
+    C$debug_line14                           0x00000474   Data           0  main.o(.debug_line)
+    C$debug_line38                           0x000004c4   Data           0  main.o(.debug_line)
+    C$debug_line20                           0x0000051c   Data           0  main.o(.debug_line)
+    C$debug_macinfo41                        0x00000658   Data           0  main.o(.debug_macinfo)
+    C$debug_macinfo23                        0x00000688   Data           0  main.o(.debug_macinfo)
+    C$debug_info21                           0x000007ac   Data           0  main.o(.debug_info)
+    C$debug_pubnames4                        0x000007f8   Data           0  wb_uart.o(.debug_pubnames)
+    C$debug_pubnames46                       0x000008b8   Data           0  wb_uart.o(.debug_pubnames)
+    C$debug_line2                            0x00000b30   Data           0  wb_uart.o(.debug_line)
+    C$debug_line44                           0x00000c04   Data           0  wb_uart.o(.debug_line)
+    C$debug_loc48                            0x00000c2c   Data           0  wb_uart.o(.debug_loc)
+    C$debug_info15                           0x0000112c   Data           0  main.o(.debug_info)
+    C$debug_macinfo5                         0x00001438   Data           0  wb_uart.o(.debug_macinfo)
+    C$debug_info3                            0x000020d8   Data           0  wb_uart.o(.debug_info)
+    C$debug_info45                           0x00002258   Data           0  wb_uart.o(.debug_info)
+    sysSetBaudRate                           0x00700ffc   ARM Code      56  wb_uart.o(.text)
+    sysPutRepChar                            0x007013a4   ARM Code      48  wb_uart.o(.text)
+    sysPutStringReverse                      0x007013d4   ARM Code      48  wb_uart.o(.text)
+    sysPutNumber                             0x00701404   ARM Code     444  wb_uart.o(.text)
+    FormatItem                               0x007015c0   ARM Code     532  wb_uart.o(.text)
+    .data$0                                  0x00704a2c   Data           0  wb_uart.o(.data)
+    .bss$2                                   0x00731004   Data           0  wb_uart.o(.bss)
+    D:\Work\Wellcom_WEL-401AFE-V40\SpiLoader\sys\wb_aic.c 0x00000000   Number         0  wb_aic.o ABSOLUTE
+    .bss                                     0x00731114   Data           0  wb_aic.o(.bss)
+    .data                                    0x00704a38   Data           0  wb_aic.o(.data)
+    .text                                    0x007019e8   ARM Code       0  wb_aic.o(.text)
+    C$debug_abbrev0                          0x00000010   Data           0  standalone.o(.debug_abbrev)
+    C$debug_pubnames10                       0x0000012c   Data           0  main.o(.debug_pubnames)
+    C$debug_pubnames34                       0x000001b0   Data           0  main.o(.debug_pubnames)
+    C$debug_pubnames16                       0x0000035c   Data           0  main.o(.debug_pubnames)
+    C$debug_info33                           0x000003d4   Data           0  main.o(.debug_info)
+    C$debug_macinfo11                        0x00000468   Data           0  main.o(.debug_macinfo)
+    C$debug_line8                            0x00000474   Data           0  main.o(.debug_line)
+    C$debug_line32                           0x000004c4   Data           0  main.o(.debug_line)
+    C$debug_frame43                          0x0000050c   Data           0  wb_aic.o(.debug_frame)
+    C$debug_line14                           0x0000051c   Data           0  main.o(.debug_line)
+    C$debug_macinfo35                        0x00000658   Data           0  main.o(.debug_macinfo)
+    C$debug_macinfo17                        0x00000688   Data           0  main.o(.debug_macinfo)
+    C$debug_info15                           0x000007ac   Data           0  main.o(.debug_info)
+    C$debug_pubnames4                        0x000009b8   Data           0  wb_aic.o(.debug_pubnames)
+    C$debug_pubnames40                       0x00000a34   Data           0  wb_aic.o(.debug_pubnames)
+    C$debug_line2                            0x00000e84   Data           0  wb_aic.o(.debug_line)
+    C$debug_line38                           0x00000f4c   Data           0  wb_aic.o(.debug_line)
+    C$debug_info9                            0x0000112c   Data           0  main.o(.debug_info)
+    C$debug_loc42                            0x00001194   Data           0  wb_aic.o(.debug_loc)
+    C$debug_macinfo5                         0x00001754   Data           0  wb_aic.o(.debug_macinfo)
+    C$debug_info3                            0x00002c88   Data           0  wb_aic.o(.debug_info)
+    C$debug_info39                           0x00002da8   Data           0  wb_aic.o(.debug_info)
+    .data$0                                  0x00704a38   Data           0  wb_aic.o(.data)
+    .bss$2                                   0x00731114   Data           0  wb_aic.o(.bss)
+    D:\Work\Wellcom_WEL-401AFE-V40\SpiLoader\sys\wb_cache.c 0x00000000   Number         0  wb_cache.o ABSOLUTE
+    .bss                                     0x00731118   Data           0  wb_cache.o(.bss)
+    .text                                    0x00701fc4   ARM Code       0  wb_cache.o(.text)
+    C$debug_abbrev0                          0x00000010   Data           0  standalone.o(.debug_abbrev)
+    C$debug_pubnames28                       0x000001b0   Data           0  main.o(.debug_pubnames)
+    C$debug_pubnames10                       0x0000035c   Data           0  main.o(.debug_pubnames)
+    C$debug_info27                           0x000003d4   Data           0  main.o(.debug_info)
+    C$debug_line26                           0x000004c4   Data           0  main.o(.debug_line)
+    C$debug_line8                            0x0000051c   Data           0  main.o(.debug_line)
+    C$debug_macinfo29                        0x00000658   Data           0  main.o(.debug_macinfo)
+    C$debug_macinfo11                        0x00000688   Data           0  main.o(.debug_macinfo)
+    C$debug_frame37                          0x000006bc   Data           0  wb_cache.o(.debug_frame)
+    C$debug_info9                            0x000007ac   Data           0  main.o(.debug_info)
+    C$debug_pubnames4                        0x00000be0   Data           0  wb_cache.o(.debug_pubnames)
+    C$debug_pubnames34                       0x00000c18   Data           0  wb_cache.o(.debug_pubnames)
+    C$debug_line2                            0x00001124   Data           0  wb_cache.o(.debug_line)
+    C$debug_line32                           0x000011bc   Data           0  wb_cache.o(.debug_line)
+    C$debug_loc36                            0x00001714   Data           0  wb_cache.o(.debug_loc)
+    C$debug_macinfo5                         0x00001a10   Data           0  wb_cache.o(.debug_macinfo)
+    C$debug_info3                            0x00003658   Data           0  wb_cache.o(.debug_info)
+    C$debug_info33                           0x00003708   Data           0  wb_cache.o(.debug_info)
+    .bss$2                                   0x00731118   Data           0  wb_cache.o(.bss)
+    D:\Work\Wellcom_WEL-401AFE-V40\SpiLoader\sys\wb_config.c 0x00000000   Number         0  wb_config.o ABSOLUTE
+    .bss                                     0x00731120   Data           0  wb_config.o(.bss)
+    .constdata                               0x00704858   Data           0  wb_config.o(.constdata)
+    .text                                    0x00702284   ARM Code       0  wb_config.o(.text)
+    .data                                    0x00704b3c   Data           0  wb_config.o(.data)
+    C$debug_abbrev0                          0x00000010   Data           0  standalone.o(.debug_abbrev)
+    C$debug_pubnames34                       0x000001b0   Data           0  main.o(.debug_pubnames)
+    C$debug_pubnames16                       0x0000035c   Data           0  main.o(.debug_pubnames)
+    C$debug_info33                           0x000003d4   Data           0  main.o(.debug_info)
+    C$debug_line32                           0x000004c4   Data           0  main.o(.debug_line)
+    C$debug_line14                           0x0000051c   Data           0  main.o(.debug_line)
+    C$debug_macinfo35                        0x00000658   Data           0  main.o(.debug_macinfo)
+    C$debug_macinfo17                        0x00000688   Data           0  main.o(.debug_macinfo)
+    C$debug_info15                           0x000007ac   Data           0  main.o(.debug_info)
+    C$debug_frame43                          0x000007b8   Data           0  wb_config.o(.debug_frame)
+    C$debug_pubnames4                        0x00000cdc   Data           0  wb_config.o(.debug_pubnames)
+    C$debug_pubnames40                       0x00000e40   Data           0  wb_config.o(.debug_pubnames)
+    C$debug_line2                            0x00001318   Data           0  wb_config.o(.debug_line)
+    C$debug_line38                           0x000013e4   Data           0  wb_config.o(.debug_line)
+    C$debug_loc42                            0x00001960   Data           0  wb_config.o(.debug_loc)
+    C$debug_macinfo5                         0x00001be0   Data           0  wb_config.o(.debug_macinfo)
+    C$debug_info3                            0x00003b00   Data           0  wb_config.o(.debug_info)
+    C$debug_info39                           0x00003d7c   Data           0  wb_config.o(.debug_info)
+    .constdata$1                             0x00704858   Data           0  wb_config.o(.constdata)
+    .data$0                                  0x00704b3c   Data           0  wb_config.o(.data)
+    g_u32UpllKHz                             0x00704b3c   Data           4  wb_config.o(.data)
+    g_u32ApllKHz                             0x00704b40   Data           4  wb_config.o(.data)
+    g_u32SysKHz                              0x00704b44   Data           4  wb_config.o(.data)
+    g_u32CpuKHz                              0x00704b48   Data           4  wb_config.o(.data)
+    g_u32HclkKHz                             0x00704b4c   Data           4  wb_config.o(.data)
+    g_u32ExtClk                              0x00704b50   Data           4  wb_config.o(.data)
+    .bss$2                                   0x00731120   Data           0  wb_config.o(.bss)
+    g_u32SysClkSrc                           0x0073112c   Data           4  wb_config.o(.bss)
+    g_u32Hclk1KHz                            0x00731130   Data           4  wb_config.o(.bss)
+    g_u32ApbKHz                              0x00731134   Data           4  wb_config.o(.bss)
+    g_u32REG_APLL                            0x00731138   Data           4  wb_config.o(.bss)
+    g_u32REG_UPLL                            0x0073113c   Data           4  wb_config.o(.bss)
+    g_u32SysDiv                              0x00731140   Data           4  wb_config.o(.bss)
+    g_u32CpuDiv                              0x00731144   Data           4  wb_config.o(.bss)
+    g_u32ApbDiv                              0x00731148   Data           4  wb_config.o(.bss)
+    D:\Work\Wellcom_WEL-401AFE-V40\SpiLoader\sys\wb_dcache.s 0x00000000   Number         0  wb_dcache.o ABSOLUTE
+    MEM_INIT                                 0x00704814   ARM Code      12  wb_dcache.o(MEM_INIT)
+    <Anonymous Symbol>                       0x00004b84   Data         132  wb_dcache.o(.debug_info)
+    <Anonymous Symbol>                       0x0000041c   Data          16  wb_dcache.o(.debug_abbrev)
+    <Anonymous Symbol>                       0x00001794   Data         104  wb_dcache.o(.debug_line)
+    tci_loop                                 0x00704814   ARM Code       0  wb_dcache.o(MEM_INIT)
+    D:\Work\Wellcom_WEL-401AFE-V40\SpiLoader\sys\wb_mem.c 0x00000000   Number         0  wb_mem.o ABSOLUTE
+    C$debug_abbrev0                          0x00000010   Data           0  standalone.o(.debug_abbrev)
+    C$debug_pubnames28                       0x000001b0   Data           0  main.o(.debug_pubnames)
+    C$debug_pubnames10                       0x0000035c   Data           0  main.o(.debug_pubnames)
+    C$debug_info27                           0x000003d4   Data           0  main.o(.debug_info)
+    C$debug_line26                           0x000004c4   Data           0  main.o(.debug_line)
+    C$debug_line8                            0x0000051c   Data           0  main.o(.debug_line)
+    C$debug_macinfo29                        0x00000658   Data           0  main.o(.debug_macinfo)
+    C$debug_macinfo11                        0x00000688   Data           0  main.o(.debug_macinfo)
+    C$debug_info9                            0x000007ac   Data           0  main.o(.debug_info)
+    D:\Work\Wellcom_WEL-401AFE-V40\SpiLoader\src\libgpio.c 0x00000000   Number         0  libgpio.o ABSOLUTE
+    .text                                    0x007032f4   ARM Code       0  libgpio.o(.text)
+    .constdata                               0x0070486c   Data           0  libgpio.o(.constdata)
+    C$debug_abbrev0                          0x00000010   Data           0  standalone.o(.debug_abbrev)
+    C$debug_pubnames10                       0x0000012c   Data           0  main.o(.debug_pubnames)
+    C$debug_pubnames46                       0x000001b0   Data           0  main.o(.debug_pubnames)
+    C$debug_pubnames28                       0x0000035c   Data           0  main.o(.debug_pubnames)
+    C$debug_info45                           0x000003d4   Data           0  main.o(.debug_info)
+    C$debug_macinfo11                        0x00000468   Data           0  main.o(.debug_macinfo)
+    C$debug_line8                            0x00000474   Data           0  main.o(.debug_line)
+    C$debug_line44                           0x000004c4   Data           0  main.o(.debug_line)
+    C$debug_line26                           0x0000051c   Data           0  main.o(.debug_line)
+    C$debug_macinfo47                        0x00000658   Data           0  main.o(.debug_macinfo)
+    C$debug_macinfo29                        0x00000688   Data           0  main.o(.debug_macinfo)
+    C$debug_info27                           0x000007ac   Data           0  main.o(.debug_info)
+    C$debug_frame91                          0x00000a28   Data           0  libgpio.o(.debug_frame)
+    C$debug_pubnames4                        0x00000fdc   Data           0  libgpio.o(.debug_pubnames)
+    C$debug_pubnames88                       0x00000ff8   Data           0  libgpio.o(.debug_pubnames)
+    C$debug_info9                            0x0000112c   Data           0  main.o(.debug_info)
+    C$debug_line2                            0x000017fc   Data           0  libgpio.o(.debug_line)
+    C$debug_line86                           0x0000191c   Data           0  libgpio.o(.debug_line)
+    C$debug_macinfo5                         0x00001dfc   Data           0  libgpio.o(.debug_macinfo)
+    C$debug_loc90                            0x00002370   Data           0  libgpio.o(.debug_loc)
+    C$debug_info3                            0x00004c08   Data           0  libgpio.o(.debug_info)
+    C$debug_info87                           0x00004cb0   Data           0  libgpio.o(.debug_info)
+    .constdata$1                             0x0070486c   Data           0  libgpio.o(.constdata)
+    _clk                                     0x0070486c   Data          64  libgpio.o(.constdata)
+    ../../angel/startup.s                    0x00000000   Number         0  __main.o ABSOLUTE
+    <Anonymous Symbol>                       0x00000b78   Data          60  __main.o(.debug_frame)
+    !!!                                      0x00700054   ARM Code     168  __main.o(!!!)
+    _move_region                             0x00700074   ARM Code       0  __main.o(!!!)
+    _move_loop                               0x007000a4   ARM Code       0  __main.o(!!!)
+    _zero_region                             0x007000b8   ARM Code       0  __main.o(!!!)
+    _zero_loop                               0x007000dc   ARM Code       0  __main.o(!!!)
+    _region_table                            0x007000ec   Data           0  __main.o(!!!)
+    ../../armsys.c                           0x00000000   Number         0  _no_redirect.o ABSOLUTE
+    .text                                    0x00704018   ARM Code       0  _no_redirect.o(.text)
+    C$debug_frame18                          0x00000bb4   Data           0  _no_redirect.o(.debug_frame)
+    ../../heapalloc.c                        0x00000000   Number         0  free.o ABSOLUTE
+    ../../heapalloc.c                        0x00000000   Number         0  malloc.o ABSOLUTE
+    ../../string.c                           0x00000000   Number         0  memcmp.o ABSOLUTE
+    ../../memcpset.s                         0x00000000   Number         0  rt_memclr.o ABSOLUTE
+    .text                                    0x00704020   ARM Code      68  rt_memclr.o(.text)
+    <Anonymous Symbol>                       0x00000c00   Data          68  rt_memclr.o(.debug_frame)
+    _Bytes                                   0x00704050   ARM Code       0  rt_memclr.o(.text)
+    ../../memcpset.s                         0x00000000   Number         0  rt_memcpy.o ABSOLUTE
+    .text                                    0x00704064   ARM Code     180  rt_memcpy.o(.text)
+    <Anonymous Symbol>                       0x00000c44   Data          60  rt_memcpy.o(.debug_frame)
+    _memcpy_dest_aligned                     0x00704098   ARM Code       0  rt_memcpy.o(.text)
+    _memcpy_src1_loop                        0x007040b8   ARM Code       0  rt_memcpy.o(.text)
+    _memcpy_src2_loop                        0x007040d8   ARM Code       0  rt_memcpy.o(.text)
+    _memcpy_src3_loop                        0x007040f8   ARM Code       0  rt_memcpy.o(.text)
+    ../../division.s                         0x00000000   Number         0  rt_sdiv.o ABSOLUTE
+    <Anonymous Symbol>                       0x00000c80   Data          68  rt_sdiv.o(.debug_frame)
+    .text                                    0x00704118   ARM Code     212  rt_sdiv.o(.text)
+    ../../division.s                         0x00000000   Number         0  rt_udiv.o ABSOLUTE
+    <Anonymous Symbol>                       0x00000cc4   Data          68  rt_udiv.o(.debug_frame)
+    .text                                    0x007041ec   ARM Code     192  rt_udiv.o(.text)
+    ../../string.c                           0x00000000   Number         0  strlen.o ABSOLUTE
+    .text                                    0x007042ac   ARM Code       0  strlen.o(.text)
+    C$debug_frame12                          0x00000d08   Data           0  strlen.o(.debug_frame)
+    ../../heap1.c                            0x00000000   Number         0  h1_alloc.o ABSOLUTE
+    ../../heap1.c                            0x00000000   Number         0  h1_extend.o ABSOLUTE
+    ../../heap1.c                            0x00000000   Number         0  h1_free.o ABSOLUTE
+    ../../stkheap.s                          0x00000000   Number         0  heapext.o ABSOLUTE
+    ../../heapalloc.c                        0x00000000   Number         0  hguardc.o ABSOLUTE
+    ../../angel/kernel.s                     0x00000000   Number         0  kernel.o ABSOLUTE
+    <Anonymous Symbol>                       0x00000d44   Data          88  kernel.o(.debug_frame)
+    .text                                    0x00704314   ARM Code      40  kernel.o(.text)
+    __rt_abort1                              0x00704338   ARM Code       0  kernel.o(.text)
+    ../../angel/sys.s                        0x00000000   Number         0  libspace.o ABSOLUTE
+    .text                                    0x0070433c   ARM Code      12  libspace.o(.text)
+    <Anonymous Symbol>                       0x00000d9c   Data          68  libspace.o(.debug_frame)
+    .bss                                     0x0073114c   Data          96  libspace.o(.bss)
+    __libspace_start                         0x0073114c   Data          96  libspace.o(.bss)
+    ../../angel/rt.s                         0x00000000   Number         0  rt_div0.o ABSOLUTE
+    <Anonymous Symbol>                       0x00000de0   Data          60  rt_div0.o(.debug_frame)
+    .text                                    0x00704348   ARM Code      12  rt_div0.o(.text)
+    ../../memcpset.s                         0x00000000   Number         0  rt_memclr_w.o ABSOLUTE
+    <Anonymous Symbol>                       0x00000e1c   Data          84  rt_memclr_w.o(.debug_frame)
+    .text                                    0x00704354   ARM Code      88  rt_memclr_w.o(.text)
+    _loop                                    0x0070436c   ARM Code       0  rt_memclr_w.o(.text)
+    ../../memcpset.s                         0x00000000   Number         0  rt_memcpy_w.o ABSOLUTE
+    .text                                    0x007043ac   ARM Code     108  rt_memcpy_w.o(.text)
+    <Anonymous Symbol>                       0x00000e70   Data          84  rt_memcpy_w.o(.debug_frame)
+    _memcpy_aligned_loop                     0x007043b8   ARM Code       0  rt_memcpy_w.o(.text)
+    _memcpy_small                            0x007043d0   ARM Code       0  rt_memcpy_w.o(.text)
+    ../../angel/rt.s                         0x00000000   Number         0  rt_raise.o ABSOLUTE
+    <Anonymous Symbol>                       0x00000ec4   Data          80  rt_raise.o(.debug_frame)
+    .text                                    0x00704418   ARM Code      24  rt_raise.o(.text)
+    ../../signal.c                           0x00000000   Number         0  __raise.o ABSOLUTE
+    .text                                    0x00704430   ARM Code       0  __raise.o(.text)
+    C$debug_frame15                          0x00000f14   Data           0  __raise.o(.debug_frame)
+    ../../stdlib.c                           0x00000000   Number         0  exit.o ABSOLUTE
+    .text                                    0x00704494   ARM Code       0  exit.o(.text)
+    C$debug_frame12                          0x00000f70   Data           0  exit.o(.debug_frame)
+    ../../armsys.c                           0x00000000   Number         0  lib_init.o ABSOLUTE
+    .text                                    0x007044ac   ARM Code       0  lib_init.o(.text)
+    C$debug_frame18                          0x00000fbc   Data           0  lib_init.o(.debug_frame)
+    ../../stkheap1.s                         0x00000000   Number         0  stkheap1.o ABSOLUTE
+    <Anonymous Symbol>                       0x00001038   Data         128  stkheap1.o(.debug_frame)
+    .text                                    0x007045a8   ARM Code     252  stkheap1.o(.text)
+    _heap_overflow                           0x00704694   ARM Code       0  stkheap1.o(.text)
+    ../../signal.c                           0x00000000   Number         0  defsig.o ABSOLUTE
+    .text                                    0x007046a4   ARM Code       0  defsig.o(.text)
+    .constdata                               0x007048bc   Data           0  defsig.o(.constdata)
+    C$debug_frame15                          0x000010b8   Data           0  defsig.o(.debug_frame)
+    .constdata$1                             0x007048bc   Data           0  defsig.o(.constdata)
+    messages@__default_signal_handler_0      0x007048bc   Data          23  defsig.o(.constdata)
+    ../../unhosted.s                         0x00000000   Number         0  sigdefs.o ABSOLUTE
+    ../../fpinit.s                           0x00000000   Number         0  fpinit.o ABSOLUTE
+    x$fpl$fpinit                             0x00704844   ARM Code      20  fpinit.o(x$fpl$fpinit)
+    <Anonymous Symbol>                       0x00001104   Data          76  fpinit.o(.debug_frame)
+    ../../angel/rt.s                         0x00000000   Number         0  rt_fp_status_addr.o ABSOLUTE
+    .text                                    0x00704804   ARM Code      16  rt_fp_status_addr.o(.text)
+    <Anonymous Symbol>                       0x00001150   Data          76  rt_fp_status_addr.o(.debug_frame)
+
+    Global Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    BuildAttributes$$ARM_ISAv5$M$E$P$PE$A:L22$X:L11$S22$IW$~IW$USESV6$~STKCKD$USESV7$~SHL$OSPACE$PRES8 0x00000000   Number         0  anon$$obj.o ABSOLUTE
+    Vector_Table                             0x00000000   ARM Code       0  vectors.o(Vect)
+    __alloca_initialize                       - Undefined Weak Reference
+    __argv_alloc                              - Undefined Weak Reference
+    __call_ctors()                            - Undefined Weak Reference
+    __cpp_finalise                            - Undefined Weak Reference
+    __cpp_initialise                          - Undefined Weak Reference
+    __rt_get_argv                             - Undefined Weak Reference
+    __sigvec_lookup                           - Undefined Weak Reference
+    __user_heap_extend                        - Undefined Weak Reference
+    __user_stack_slop                         - Undefined Weak Reference
+    _atexit_init                              - Undefined Weak Reference
+    _call_atexit_fns                          - Undefined Weak Reference
+    _clock_init                               - Undefined Weak Reference
+    _get_lc_collate                           - Undefined Weak Reference
+    _get_lc_ctype                             - Undefined Weak Reference
+    _get_lc_monetary                          - Undefined Weak Reference
+    _get_lc_numeric                           - Undefined Weak Reference
+    _get_lc_time                              - Undefined Weak Reference
+    _getenv_init                              - Undefined Weak Reference
+    _initio                                   - Undefined Weak Reference
+    _rand_init                                - Undefined Weak Reference
+    _signal_init                              - Undefined Weak Reference
+    _terminateio                              - Undefined Weak Reference
+    Reset_Go                                 0x00700000   ARM Code       0  wb_init.o(WB_INIT)
+    __main                                   0x00700054   ARM Code     152  __main.o(!!!)
+    _sys_exit                                0x007000fc   ARM Code       8  standalone.o(.text)
+    _ttywrch                                 0x00700104   ARM Code       8  standalone.o(.text)
+    dummy_func                               0x0070010c   ARM Code      28  standalone.o(.text)
+    __user_initial_stackheap                 0x00700128   ARM Code      68  standalone.o(.text)
+    Delayus                                  0x00700174   ARM Code      36  main.o(.text)
+    GpioInit                                 0x00700198   ARM Code     104  main.o(.text)
+    FeedWatchdog                             0x00700200   ARM Code      84  main.o(.text)
+    init                                     0x00700254   ARM Code     348  main.o(.text)
+    main                                     0x007003b0   ARM Code     524  main.o(.text)
+    usiActive                                0x007005bc   ARM Code      48  SpiRead.o(.text)
+    usiTxLen                                 0x007005ec   ARM Code     112  SpiRead.o(.text)
+    usiCheckBusy                             0x0070065c   ARM Code     140  SpiRead.o(.text)
+    SPIReadFast                              0x007006e8   ARM Code     356  SpiRead.o(.text)
+    SPI_OpenSPI                              0x0070084c   ARM Code     120  SpiRead.o(.text)
+    SPI_CloseSPI                             0x007008c4   ARM Code      44  SpiRead.o(.text)
+    sysGetPhyPageAddr                        0x007008f0   ARM Code     100  wb_mmu.o(.text)
+    sysSetCachePages                         0x00700954   ARM Code     276  wb_mmu.o(.text)
+    sysInitPageTable                         0x00700a68   ARM Code     380  wb_mmu.o(.text)
+    sysSetMMUMappingMethod                   0x00700be4   ARM Code      20  wb_mmu.o(.text)
+    sysInitMMUTable                          0x00700bf8   ARM Code     636  wb_mmu.o(.text)
+    sysUartPort                              0x00700e8c   ARM Code     124  wb_uart.o(.text)
+    sysUartISR                               0x00700f08   ARM Code     244  wb_uart.o(.text)
+    sysInitializeUART                        0x00701034   ARM Code     404  wb_uart.o(.text)
+    _PutChar_f                               0x007011c8   ARM Code     432  wb_uart.o(.text)
+    sysPutString                             0x00701378   ARM Code      44  wb_uart.o(.text)
+    sysPrintf                                0x007017d4   ARM Code     208  wb_uart.o(.text)
+    sysprintf                                0x007018a4   ARM Code     208  wb_uart.o(.text)
+    sysGetChar                               0x00701974   ARM Code      60  wb_uart.o(.text)
+    sysPutChar                               0x007019b0   ARM Code      52  wb_uart.o(.text)
+    sysIrqHandler                            0x007019e8   ARM Code     172  wb_aic.o(.text)
+    sysFiqHandler                            0x00701a94   ARM Code     172  wb_aic.o(.text)
+    WB_Interrupt_Shell                       0x00701b40   ARM Code       4  wb_aic.o(.text)
+    sysInitializeAIC                         0x00701b44   ARM Code      96  wb_aic.o(.text)
+    sysDisableInterrupt                      0x00701ba4   ARM Code      52  wb_aic.o(.text)
+    sysEnableInterrupt                       0x00701bd8   ARM Code      52  wb_aic.o(.text)
+    sysInstallExceptionHandler               0x00701c0c   ARM Code     124  wb_aic.o(.text)
+    sysInstallFiqHandler                     0x00701c88   ARM Code      28  wb_aic.o(.text)
+    sysInstallIrqHandler                     0x00701ca4   ARM Code      28  wb_aic.o(.text)
+    sysInstallISR                            0x00701cc0   ARM Code     248  wb_aic.o(.text)
+    sysSetGlobalInterrupt                    0x00701db8   ARM Code      64  wb_aic.o(.text)
+    sysSetInterruptPriorityLevel             0x00701df8   ARM Code     124  wb_aic.o(.text)
+    sysSetInterruptType                      0x00701e74   ARM Code     128  wb_aic.o(.text)
+    sysSetLocalInterrupt                     0x00701ef4   ARM Code     120  wb_aic.o(.text)
+    sysSetAIC2SWMode                         0x00701f6c   ARM Code      20  wb_aic.o(.text)
+    sysGetInterruptEnableStatus              0x00701f80   ARM Code      12  wb_aic.o(.text)
+    sysGetIBitState                          0x00701f8c   ARM Code      28  wb_aic.o(.text)
+    sysGetSdramSizebyMB                      0x00701fc4   ARM Code     288  wb_cache.o(.text)
+    sysEnableCache                           0x007020e4   ARM Code      44  wb_cache.o(.text)
+    sysDisableCache                          0x00702110   ARM Code      88  wb_cache.o(.text)
+    sysFlushCache                            0x00702168   ARM Code      88  wb_cache.o(.text)
+    sysInvalidCache                          0x007021c0   ARM Code      12  wb_cache.o(.text)
+    sysGetCacheState                         0x007021cc   ARM Code      12  wb_cache.o(.text)
+    sysGetCacheMode                          0x007021d8   ARM Code      12  wb_cache.o(.text)
+    _sysLockCode                             0x007021e4   ARM Code     128  wb_cache.o(.text)
+    _sysUnLockCode                           0x00702264   ARM Code      20  wb_cache.o(.text)
+    InitDelay                                0x00702284   ARM Code       4  wb_config.o(.text)
+    sysInitDDR                               0x00702288   ARM Code     324  wb_config.o(.text)
+    sysInitDDRStart                          0x007023cc   ARM Code     120  wb_config.o(.text)
+    sysInitMemory                            0x00702444   ARM Code      16  wb_config.o(.text)
+    sysGetPLLOutputKhz                       0x00702454   ARM Code     148  wb_config.o(.text)
+    sysCheckPllConstraint                    0x007024e8   ARM Code      12  wb_config.o(.text)
+    sysClockInaccuracy                       0x007024f4   ARM Code      12  wb_config.o(.text)
+    sysGetPLLControlRegister                 0x00702500   ARM Code     372  wb_config.o(.text)
+    sysSetPLLControlRegister                 0x00702674   ARM Code      40  wb_config.o(.text)
+    sysExternalClock                         0x0070269c   ARM Code      68  wb_config.o(.text)
+    sysClockSwitch                           0x007026e0   ARM Code     668  wb_config.o(.text)
+    sysClockSwitchStart                      0x0070297c   ARM Code     180  wb_config.o(.text)
+    sysGetExternalClock                      0x00702a30   ARM Code     132  wb_config.o(.text)
+    sysSetSystemClock                        0x00702ab4   ARM Code    1336  wb_config.o(.text)
+    sysGetSystemClock                        0x00702fec   ARM Code     136  wb_config.o(.text)
+    sysSetPllClock                           0x00703074   ARM Code     252  wb_config.o(.text)
+    sysClockDiv                              0x00703170   ARM Code     224  wb_config.o(.text)
+    sysClockDivSwitchStart                   0x00703250   ARM Code     100  wb_config.o(.text)
+    gpio_open                                0x007032f4   ARM Code     156  libgpio.o(.text)
+    gpio_readport                            0x00703390   ARM Code     160  libgpio.o(.text)
+    gpio_setportdir                          0x00703430   ARM Code     352  libgpio.o(.text)
+    gpio_setportval                          0x00703590   ARM Code     352  libgpio.o(.text)
+    gpio_setportpull                         0x007036f0   ARM Code     352  libgpio.o(.text)
+    gpio_setdebounce                         0x00703850   ARM Code     112  libgpio.o(.text)
+    gpio_getdebounce                         0x007038c0   ARM Code      48  libgpio.o(.text)
+    gpio_setsrcgrp                           0x007038f0   ARM Code     456  libgpio.o(.text)
+    gpio_getsrcgrp                           0x00703ab8   ARM Code     168  libgpio.o(.text)
+    gpio_setintmode                          0x00703b60   ARM Code     396  libgpio.o(.text)
+    gpio_getintmode                          0x00703cec   ARM Code     232  libgpio.o(.text)
+    gpio_setlatchtrigger                     0x00703dd4   ARM Code      36  libgpio.o(.text)
+    gpio_getlatchtrigger                     0x00703df8   ARM Code      20  libgpio.o(.text)
+    gpio_getlatchval                         0x00703e0c   ARM Code     152  libgpio.o(.text)
+    gpio_gettriggersrc                       0x00703ea4   ARM Code     160  libgpio.o(.text)
+    gpio_cleartriggersrc                     0x00703f44   ARM Code     212  libgpio.o(.text)
+    _main_redirection                        0x00704018   ARM Code       4  _no_redirect.o(.text)
+    _main                                    0x0070401c   ARM Code       4  _no_redirect.o(.text)
+    __rt_memclr                              0x00704020   ARM Code      68  rt_memclr.o(.text)
+    _memset                                  0x00704024   ARM Code       0  rt_memclr.o(.text)
+    __rt_memcpy                              0x00704064   ARM Code     180  rt_memcpy.o(.text)
+    __rt_sdiv                                0x00704118   ARM Code     212  rt_sdiv.o(.text)
+    __rt_udiv                                0x007041ec   ARM Code     192  rt_udiv.o(.text)
+    strlen                                   0x007042ac   ARM Code     100  strlen.o(.text)
+    __rt_entry                               0x00704314   ARM Code       0  kernel.o(.text)
+    __32__rt_exit                            0x00704324   ARM Code       0  kernel.o(.text)
+    __rt_exit                                0x00704324   ARM Code      16  kernel.o(.text)
+    __32__rt_abort                           0x00704334   ARM Code       0  kernel.o(.text)
+    __rt_abort                               0x00704334   ARM Code       8  kernel.o(.text)
+    __user_libspace                          0x0070433c   ARM Code       8  libspace.o(.text)
+    __rt_div0                                0x00704348   ARM Code      12  rt_div0.o(.text)
+    __rt_memclr_w                            0x00704354   ARM Code      88  rt_memclr_w.o(.text)
+    _memset_w                                0x00704358   ARM Code       0  rt_memclr_w.o(.text)
+    __rt_memcpy_w                            0x007043ac   ARM Code     108  rt_memcpy_w.o(.text)
+    _memcpy_lastbytes                        0x007043f8   ARM Code       0  rt_memcpy_w.o(.text)
+    __32__rt_raise                           0x00704418   ARM Code       0  rt_raise.o(.text)
+    __rt_raise                               0x00704418   ARM Code      24  rt_raise.o(.text)
+    __raise                                  0x00704430   ARM Code      92  __raise.o(.text)
+    exit                                     0x00704494   ARM Code      24  exit.o(.text)
+    __rt_lib_init                            0x007044ac   ARM Code     228  lib_init.o(.text)
+    __rt_lib_shutdown                        0x00704590   ARM Code      20  lib_init.o(.text)
+    __rt_stackheap_init                      0x007045a8   ARM Code     144  stkheap1.o(.text)
+    __rt_heap_extend                         0x00704638   ARM Code     108  stkheap1.o(.text)
+    __default_signal_handler                 0x007046a4   ARM Code     352  defsig.o(.text)
+    __rt_fp_status_addr                      0x00704804   ARM Code      16  rt_fp_status_addr.o(.text)
+    sys_flush_and_clean_dcache               0x00704814   ARM Code       0  wb_dcache.o(MEM_INIT)
+    sysSetupCP15                             0x00704820   ARM Code       0  wb_sysctl.o(SYS_INIT)
+    _fp_init                                 0x00704844   ARM Code      20  fpinit.o(x$fpl$fpinit)
+    __fplib_config_pureend_doubles           0x00704854   ARM Code       0  fpinit.o(x$fpl$fpinit)
+    Region$$Table$$Base                      0x007049e8   Data           0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x00704a18   Data           0  anon$$obj.o(Region$$Table)
+    ZISection$$Table$$Base                   0x00704a18   Data           0  anon$$obj.o(ZISection$$Table)
+    ZISection$$Table$$Limit                  0x00704a28   Data           0  anon$$obj.o(ZISection$$Table)
+    gWdiFlag                                 0x00704a28   Data           1  main.o(.data)
+    _sys_bIsUseUARTInt                       0x00704a2c   Data           1  wb_uart.o(.data)
+    _sys_uUARTClockRate                      0x00704a30   Data           4  wb_uart.o(.data)
+    u32UartPort                              0x00704a34   Data           4  wb_uart.o(.data)
+    _sys_bIsHWMode                           0x00704a38   Data           1  wb_aic.o(.data)
+    sysIrqHandlerTable                       0x00704a3c   Data         128  wb_aic.o(.data)
+    sysFiqHandlerTable                       0x00704abc   Data         128  wb_aic.o(.data)
+    bIsCheckConstraint                       0x00704b54   Data           1  wb_config.o(.data)
+    image_buffer                             0x00704b58   Data        4096  main.o(.bss)
+    imagebuf                                 0x00705b58   Data           4  main.o(.bss)
+    pImageList                               0x00705b5c   Data           4  main.o(.bss)
+    _mmuSectionTable                         0x0070c000   Data       16384  wb_mmu.o(.bss)
+    _tmp_buf                                 0x00730004   Data        4096  wb_power.o(.bss)
+    _sys_bIsUARTInitial                      0x00731004   Data           1  wb_uart.o(.bss)
+    _sys_ucUartTxBuf                         0x00731005   Data         256  wb_uart.o(.bss)
+    _sys_uUartTxHead                         0x00731108   Data           4  wb_uart.o(.bss)
+    _sys_uUartTxTail                         0x0073110c   Data           4  wb_uart.o(.bss)
+    _sys_pvOldUartVect                       0x00731110   Data           4  wb_uart.o(.bss)
+    _sys_bIsAICInitial                       0x00731114   Data           1  wb_aic.o(.bss)
+    _sys_IsCacheOn                           0x00731118   Data           1  wb_cache.o(.bss)
+    _sys_CacheMode                           0x0073111c   Data           4  wb_cache.o(.bss)
+    bIsCpuOver2xHclk                         0x00731120   Data           1  wb_config.o(.bss)
+    g_u32InaccuracyKHz                       0x00731124   Data           4  wb_config.o(.bss)
+    bIsAPLLInitialize                        0x00731128   Data           1  wb_config.o(.bss)
+    bottom_of_heap                           0x00780000   Data           1  heap.o(Heap)
+    top_of_stacks                            0x00790000   Data           1  stack.o(Stacks)
+    __SIG_IGN                                0xfffffffd   Number         0  sigdefs.o ABSOLUTE
+    __SIG_ERR                                0xfffffffe   Number         0  sigdefs.o ABSOLUTE
+    __SIG_DFL                                0xffffffff   Number         0  sigdefs.o ABSOLUTE
+
+
+================================================================================
+
+Memory Map of the image
+
+  Image Entry point : 0x00700000
+
+  Load Region ROM_LOAD (Base: 0x00700000, Size: 0x00004bb8, Max: 0xffffffff, ABSOLUTE)
+
+    Execution Region ROM (Base: 0x00700000, Size: 0x000311ac, Max: 0xffffffff, ABSOLUTE)
+
+    Base Addr    Size         Type   Attr  Idx  E Section Name        Object
+
+    0x00700000   0x00000054   Code   RO     1   * WB_INIT             wb_init.o
+    0x00700054   0x000000a8   Code   RO   191   * !!!                 __main.o(c_a__un.l)
+    0x007000fc   0x00000078   Code   RO    13     .text               standalone.o
+    0x00700174   0x00000448   Code   RO    28     .text               main.o
+    0x007005bc   0x00000334   Code   RO    72     .text               SpiRead.o
+    0x007008f0   0x0000059c   Code   RO    81     .text               wb_mmu.o
+    0x00700e8c   0x00000b5c   Code   RO   119     .text               wb_uart.o
+    0x007019e8   0x000005dc   Code   RO   131     .text               wb_aic.o
+    0x00701fc4   0x000002c0   Code   RO   143     .text               wb_cache.o
+    0x00702284   0x00001070   Code   RO   154     .text               wb_config.o
+    0x007032f4   0x00000d24   Code   RO   180     .text               libgpio.o
+    0x00704018   0x00000008   Code   RO   193     .text               _no_redirect.o(c_a__un.l)
+    0x00704020   0x00000044   Code   RO   201     .text               rt_memclr.o(c_a__un.l)
+    0x00704064   0x000000b4   Code   RO   203     .text               rt_memcpy.o(c_a__un.l)
+    0x00704118   0x000000d4   Code   RO   205     .text               rt_sdiv.o(c_a__un.l)
+    0x007041ec   0x000000c0   Code   RO   207     .text               rt_udiv.o(c_a__un.l)
+    0x007042ac   0x00000068   Code   RO   209     .text               strlen.o(c_a__un.l)
+    0x00704314   0x00000028   Code   RO   221     .text               kernel.o(c_a__un.l)
+    0x0070433c   0x0000000c   Code   RO   223     .text               libspace.o(c_a__un.l)
+    0x00704348   0x0000000c   Code   RO   226     .text               rt_div0.o(c_a__un.l)
+    0x00704354   0x00000058   Code   RO   228     .text               rt_memclr_w.o(c_a__un.l)
+    0x007043ac   0x0000006c   Code   RO   230     .text               rt_memcpy_w.o(c_a__un.l)
+    0x00704418   0x00000018   Code   RO   232     .text               rt_raise.o(c_a__un.l)
+    0x00704430   0x00000064   Code   RO   234     .text               __raise.o(c_a__un.l)
+    0x00704494   0x00000018   Code   RO   236     .text               exit.o(c_a__un.l)
+    0x007044ac   0x000000fc   Code   RO   238     .text               lib_init.o(c_a__un.l)
+    0x007045a8   0x000000fc   Code   RO   240     .text               stkheap1.o(c_a__un.l)
+    0x007046a4   0x00000160   Code   RO   242     .text               defsig.o(c_a__un.l)
+    0x00704804   0x00000010   Code   RO   248     .text               rt_fp_status_addr.o(c_a__un.l)
+    0x00704814   0x0000000c   Code   RO   167     MEM_INIT            wb_dcache.o
+    0x00704820   0x00000024   Code   RO   103     SYS_INIT            wb_sysctl.o
+    0x00704844   0x00000014   Code   RO   246     x$fpl$fpinit        fpinit.o(f_a_p.l)
+    0x00704858   0x00000014   Data   RO   156     .constdata          wb_config.o
+    0x0070486c   0x00000050   Data   RO   181     .constdata          libgpio.o
+    0x007048bc   0x0000012b   Data   RO   243     .constdata          defsig.o(c_a__un.l)
+    0x007049e7   0x00000001   PAD
+    0x007049e8   0x00000030   Data   RO   250     Region$$Table       anon$$obj.o
+    0x00704a18   0x00000010   Data   RO   251     ZISection$$Table    anon$$obj.o
+    0x00704a28   0x00000001   Data   RW    29     .data               main.o
+    0x00704a29   0x00000003   PAD
+    0x00704a2c   0x0000000c   Data   RW   120     .data               wb_uart.o
+    0x00704a38   0x00000104   Data   RW   132     .data               wb_aic.o
+    0x00704b3c   0x0000001c   Data   RW   155     .data               wb_config.o
+    0x00704b58   0x00001008   Zero   RW    30     .bss                main.o
+    0x00705b60   0x000024a0   PAD
+    0x00708000   0x00028000   Zero   RW    82     .bss                wb_mmu.o
+    0x00730000   0x00001004   Zero   RW    93     .bss                wb_power.o
+    0x00731004   0x00000110   Zero   RW   121     .bss                wb_uart.o
+    0x00731114   0x00000001   Zero   RW   133     .bss                wb_aic.o
+    0x00731115   0x00000003   PAD
+    0x00731118   0x00000008   Zero   RW   144     .bss                wb_cache.o
+    0x00731120   0x0000002c   Zero   RW   157     .bss                wb_config.o
+    0x0073114c   0x00000060   Zero   RW   224     .bss                libspace.o(c_a__un.l)
+
+
+    Execution Region RAM (Base: 0x00000000, Size: 0x00000060, Max: 0xffffffff, ABSOLUTE)
+
+    Base Addr    Size         Type   Attr  Idx  E Section Name        Object
+
+    0x00000000   0x00000060   Code   RO    24     Vect                vectors.o
+
+
+    Execution Region HEAP (Base: 0x00780000, Size: 0x00000004, Max: 0xffffffff, ABSOLUTE, UNINIT)
+
+    Base Addr    Size         Type   Attr  Idx  E Section Name        Object
+
+    0x00780000   0x00000004   Zero   RW     5     Heap                heap.o
+
+
+    Execution Region STACK (Base: 0x00790000, Size: 0x00000004, Max: 0xffffffff, ABSOLUTE, UNINIT)
+
+    Base Addr    Size         Type   Attr  Idx  E Section Name        Object
+
+    0x00790000   0x00000004   Zero   RW     9     Stacks              stack.o
+
+
+
+  Load Region LR$$Debug (Base: 0x00000000, Size: 0x00000000, Max: 0xffffffff, ABSOLUTE)
+
+    Execution Region ER$$Debug (Base: 0x00000000, Size: 0x00000000, Max: 0xffffffff, ABSOLUTE)
+
+    Base Addr    Size         Type   Attr  Idx  E Section Name        Object
+
+    0x00000000   0x00000010   Dbug   RW     4     .debug_abbrev       wb_init.o
+    0x00000010   0x000003ec   Dbug   RW    23     .debug_abbrev       standalone.o
+    0x000003fc   0x00000010   Dbug   RW    27     .debug_abbrev       vectors.o
+    0x0000040c   0x00000010   Dbug   RW   106     .debug_abbrev       wb_sysctl.o
+    0x0000041c   0x00000010   Dbug   RW   170     .debug_abbrev       wb_dcache.o
+    0x00000000   0x0000009c   Dbug   RW    22     .debug_frame        standalone.o
+    0x0000009c   0x000000d0   Dbug   RW    39     .debug_frame        main.o
+    0x0000016c   0x000000b8   Dbug   RW    80     .debug_frame        SpiRead.o
+    0x00000224   0x00000114   Dbug   RW    91     .debug_frame        wb_mmu.o
+    0x00000338   0x000001d4   Dbug   RW   130     .debug_frame        wb_uart.o
+    0x0000050c   0x000001b0   Dbug   RW   142     .debug_frame        wb_aic.o
+    0x000006bc   0x000000fc   Dbug   RW   153     .debug_frame        wb_cache.o
+    0x000007b8   0x00000270   Dbug   RW   166     .debug_frame        wb_config.o
+    0x00000a28   0x00000150   Dbug   RW   190     .debug_frame        libgpio.o
+    0x00000b78   0x0000003c   Dbug   RW   192     .debug_frame        __main.o(c_a__un.l)
+    0x00000bb4   0x0000004c   Dbug   RW   194     .debug_frame        _no_redirect.o(c_a__un.l)
+    0x00000c00   0x00000044   Dbug   RW   202     .debug_frame        rt_memclr.o(c_a__un.l)
+    0x00000c44   0x0000003c   Dbug   RW   204     .debug_frame        rt_memcpy.o(c_a__un.l)
+    0x00000c80   0x00000044   Dbug   RW   206     .debug_frame        rt_sdiv.o(c_a__un.l)
+    0x00000cc4   0x00000044   Dbug   RW   208     .debug_frame        rt_udiv.o(c_a__un.l)
+    0x00000d08   0x0000003c   Dbug   RW   210     .debug_frame        strlen.o(c_a__un.l)
+    0x00000d44   0x00000058   Dbug   RW   222     .debug_frame        kernel.o(c_a__un.l)
+    0x00000d9c   0x00000044   Dbug   RW   225     .debug_frame        libspace.o(c_a__un.l)
+    0x00000de0   0x0000003c   Dbug   RW   227     .debug_frame        rt_div0.o(c_a__un.l)
+    0x00000e1c   0x00000054   Dbug   RW   229     .debug_frame        rt_memclr_w.o(c_a__un.l)
+    0x00000e70   0x00000054   Dbug   RW   231     .debug_frame        rt_memcpy_w.o(c_a__un.l)
+    0x00000ec4   0x00000050   Dbug   RW   233     .debug_frame        rt_raise.o(c_a__un.l)
+    0x00000f14   0x0000005c   Dbug   RW   235     .debug_frame        __raise.o(c_a__un.l)
+    0x00000f70   0x0000004c   Dbug   RW   237     .debug_frame        exit.o(c_a__un.l)
+    0x00000fbc   0x0000007c   Dbug   RW   239     .debug_frame        lib_init.o(c_a__un.l)
+    0x00001038   0x00000080   Dbug   RW   241     .debug_frame        stkheap1.o(c_a__un.l)
+    0x000010b8   0x0000004c   Dbug   RW   244     .debug_frame        defsig.o(c_a__un.l)
+    0x00001104   0x0000004c   Dbug   RW   247     .debug_frame        fpinit.o(f_a_p.l)
+    0x00001150   0x0000004c   Dbug   RW   249     .debug_frame        rt_fp_status_addr.o(c_a__un.l)
+    0x00000000   0x00000084   Dbug   RW     2     .debug_info         wb_init.o
+    0x00000084   0x000000f0   Dbug   RW    15     .debug_info         standalone.o
+    0x00000174   0x000001dc   Dbug   RW    19     .debug_info         standalone.o
+    0x00000350   0x00000084   Dbug   RW    25     .debug_info         vectors.o
+    0x000003d4   0x000002cc   Dbug   RW    56     .debug_info         main.o
+    0x000006a0   0x0000010c   Dbug   RW    32     .debug_info         main.o
+    0x000007ac   0x00000404   Dbug   RW    63     .debug_info         main.o
+    0x00000bb0   0x0000057c   Dbug   RW    36     .debug_info         main.o
+    0x0000112c   0x00000108   Dbug   RW    41     .debug_info         main.o
+    0x00001234   0x00000078   Dbug   RW    74     .debug_info         SpiRead.o
+    0x000012ac   0x00000444   Dbug   RW    77     .debug_info         SpiRead.o
+    0x000016f0   0x00000174   Dbug   RW    84     .debug_info         wb_mmu.o
+    0x00001864   0x00000738   Dbug   RW    88     .debug_info         wb_mmu.o
+    0x00001f9c   0x000000b8   Dbug   RW    95     .debug_info         wb_power.o
+    0x00002054   0x00000084   Dbug   RW   104     .debug_info         wb_sysctl.o
+    0x000020d8   0x00000180   Dbug   RW   123     .debug_info         wb_uart.o
+    0x00002258   0x00000a30   Dbug   RW   127     .debug_info         wb_uart.o
+    0x00002c88   0x00000120   Dbug   RW   135     .debug_info         wb_aic.o
+    0x00002da8   0x000008b0   Dbug   RW   139     .debug_info         wb_aic.o
+    0x00003658   0x000000b0   Dbug   RW   146     .debug_info         wb_cache.o
+    0x00003708   0x000003f8   Dbug   RW   150     .debug_info         wb_cache.o
+    0x00003b00   0x0000027c   Dbug   RW   159     .debug_info         wb_config.o
+    0x00003d7c   0x00000e08   Dbug   RW   163     .debug_info         wb_config.o
+    0x00004b84   0x00000084   Dbug   RW   168     .debug_info         wb_dcache.o
+    0x00004c08   0x000000a8   Dbug   RW   183     .debug_info         libgpio.o
+    0x00004cb0   0x000007f4   Dbug   RW   187     .debug_info         libgpio.o
+    0x00000000   0x00000078   Dbug   RW     3     .debug_line         wb_init.o
+    0x00000078   0x00000060   Dbug   RW    14     .debug_line         standalone.o
+    0x000000d8   0x0000008c   Dbug   RW    18     .debug_line         standalone.o
+    0x00000164   0x00000080   Dbug   RW    26     .debug_line         vectors.o
+    0x000001e4   0x0000012c   Dbug   RW    31     .debug_line         main.o
+    0x00000310   0x00000164   Dbug   RW    35     .debug_line         main.o
+    0x00000474   0x00000050   Dbug   RW    40     .debug_line         main.o
+    0x000004c4   0x00000058   Dbug   RW    55     .debug_line         main.o
+    0x0000051c   0x00000074   Dbug   RW    62     .debug_line         main.o
+    0x00000590   0x000000a8   Dbug   RW    73     .debug_line         SpiRead.o
+    0x00000638   0x00000140   Dbug   RW    76     .debug_line         SpiRead.o
+    0x00000778   0x00000098   Dbug   RW    83     .debug_line         wb_mmu.o
+    0x00000810   0x000001e4   Dbug   RW    87     .debug_line         wb_mmu.o
+    0x000009f4   0x000000cc   Dbug   RW    94     .debug_line         wb_power.o
+    0x00000ac0   0x00000070   Dbug   RW   105     .debug_line         wb_sysctl.o
+    0x00000b30   0x000000d4   Dbug   RW   122     .debug_line         wb_uart.o
+    0x00000c04   0x00000280   Dbug   RW   126     .debug_line         wb_uart.o
+    0x00000e84   0x000000c8   Dbug   RW   134     .debug_line         wb_aic.o
+    0x00000f4c   0x000001d8   Dbug   RW   138     .debug_line         wb_aic.o
+    0x00001124   0x00000098   Dbug   RW   145     .debug_line         wb_cache.o
+    0x000011bc   0x0000015c   Dbug   RW   149     .debug_line         wb_cache.o
+    0x00001318   0x000000cc   Dbug   RW   158     .debug_line         wb_config.o
+    0x000013e4   0x000003b0   Dbug   RW   162     .debug_line         wb_config.o
+    0x00001794   0x00000068   Dbug   RW   169     .debug_line         wb_dcache.o
+    0x000017fc   0x00000120   Dbug   RW   182     .debug_line         libgpio.o
+    0x0000191c   0x0000028c   Dbug   RW   186     .debug_line         libgpio.o
+    0x00000000   0x00000134   Dbug   RW    21     .debug_loc          standalone.o
+    0x00000134   0x000002e0   Dbug   RW    38     .debug_loc          main.o
+    0x00000414   0x00000294   Dbug   RW    79     .debug_loc          SpiRead.o
+    0x000006a8   0x00000584   Dbug   RW    90     .debug_loc          wb_mmu.o
+    0x00000c2c   0x00000568   Dbug   RW   129     .debug_loc          wb_uart.o
+    0x00001194   0x00000580   Dbug   RW   141     .debug_loc          wb_aic.o
+    0x00001714   0x0000024c   Dbug   RW   152     .debug_loc          wb_cache.o
+    0x00001960   0x00000a10   Dbug   RW   165     .debug_loc          wb_config.o
+    0x00002370   0x000005c4   Dbug   RW   189     .debug_loc          libgpio.o
+    0x00000000   0x000001cc   Dbug   RW    17     .debug_macinfo      standalone.o
+    0x000001cc   0x0000029c   Dbug   RW    34     .debug_macinfo      main.o
+    0x00000468   0x000001f0   Dbug   RW    43     .debug_macinfo      main.o
+    0x00000658   0x00000030   Dbug   RW    58     .debug_macinfo      main.o
+    0x00000688   0x000007c8   Dbug   RW    65     .debug_macinfo      main.o
+    0x00000e50   0x00000200   Dbug   RW    75     .debug_macinfo      SpiRead.o
+    0x00001050   0x000001e4   Dbug   RW    86     .debug_macinfo      wb_mmu.o
+    0x00001234   0x00000204   Dbug   RW    97     .debug_macinfo      wb_power.o
+    0x00001438   0x0000031c   Dbug   RW   125     .debug_macinfo      wb_uart.o
+    0x00001754   0x000002bc   Dbug   RW   137     .debug_macinfo      wb_aic.o
+    0x00001a10   0x000001d0   Dbug   RW   148     .debug_macinfo      wb_cache.o
+    0x00001be0   0x0000021c   Dbug   RW   161     .debug_macinfo      wb_config.o
+    0x00001dfc   0x000001e0   Dbug   RW   185     .debug_macinfo      libgpio.o
+    0x00000000   0x00000034   Dbug   RW    16     .debug_pubnames     standalone.o
+    0x00000034   0x0000005c   Dbug   RW    20     .debug_pubnames     standalone.o
+    0x00000090   0x0000004c   Dbug   RW    33     .debug_pubnames     main.o
+    0x000000dc   0x00000050   Dbug   RW    37     .debug_pubnames     main.o
+    0x0000012c   0x00000084   Dbug   RW    42     .debug_pubnames     main.o
+    0x000001b0   0x000001ac   Dbug   RW    57     .debug_pubnames     main.o
+    0x0000035c   0x000002d0   Dbug   RW    64     .debug_pubnames     main.o
+    0x0000062c   0x00000070   Dbug   RW    78     .debug_pubnames     SpiRead.o
+    0x0000069c   0x000000a8   Dbug   RW    85     .debug_pubnames     wb_mmu.o
+    0x00000744   0x00000084   Dbug   RW    89     .debug_pubnames     wb_mmu.o
+    0x000007c8   0x00000030   Dbug   RW    96     .debug_pubnames     wb_power.o
+    0x000007f8   0x000000c0   Dbug   RW   124     .debug_pubnames     wb_uart.o
+    0x000008b8   0x00000100   Dbug   RW   128     .debug_pubnames     wb_uart.o
+    0x000009b8   0x0000007c   Dbug   RW   136     .debug_pubnames     wb_aic.o
+    0x00000a34   0x000001ac   Dbug   RW   140     .debug_pubnames     wb_aic.o
+    0x00000be0   0x00000038   Dbug   RW   147     .debug_pubnames     wb_cache.o
+    0x00000c18   0x000000c4   Dbug   RW   151     .debug_pubnames     wb_cache.o
+    0x00000cdc   0x00000164   Dbug   RW   160     .debug_pubnames     wb_config.o
+    0x00000e40   0x0000019c   Dbug   RW   164     .debug_pubnames     wb_config.o
+    0x00000fdc   0x0000001c   Dbug   RW   184     .debug_pubnames     libgpio.o
+    0x00000ff8   0x00000160   Dbug   RW   188     .debug_pubnames     libgpio.o
+
+
+================================================================================
+
+Image component sizes
+
+
+      Code    RO Data    RW Data    ZI Data      Debug   
+
+     16384        164        301     172377      55896   Object Totals
+      2232        299          0         96       1572   Library Totals
+
+================================================================================
+
+
+      Code    RO Data    RW Data    ZI Data      Debug   
+
+     18616        463        301     172473      57468   Grand Totals
+
+================================================================================
+
+    Total RO  Size(Code + RO Data)                19079 (  18.63kB)
+    Total RW  Size(RW Data + ZI Data)            172774 ( 168.72kB)
+    Total ROM Size(Code + RO Data + RW Data)      19380 (  18.93kB)
+
+================================================================================
+
